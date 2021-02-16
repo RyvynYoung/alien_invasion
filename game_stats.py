@@ -8,7 +8,9 @@ class GameStats:
         # Start Alien Invasion in inactive state
         self.game_active = False
         # High Score should not be reset
-        self.high_score = 0
+        with open('side_projects/alien_invasion/all_time_high_score.txt') as file_obj:
+            alltime_score = file_obj.read()
+        self.high_score = int(alltime_score)
 
     def reset_stats(self):
         """Initialize statistics that can change during the game"""
