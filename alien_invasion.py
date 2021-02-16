@@ -53,9 +53,9 @@ class AlienInvasion:
         """Respond to keypresses and mouse events"""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                # all_time_high_score = 'all_time_high_score.txt'
-                # with open(all_time_high_score, 'w') as file_object:
-                #     file_object.write(high_score)
+                all_time_high_score = 'side_projects/alien_invasion/all_time_high_score.txt'
+                with open(all_time_high_score, 'w') as file_object:
+                    file_object.write(str(self.stats.high_score))
                 sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
