@@ -56,7 +56,8 @@ class AlienInvasion:
                 all_time_high_score = 'side_projects/alien_invasion/all_time_high_score.txt'
                 with open(all_time_high_score, 'w') as file_object:
                     file_object.write(str(self.stats.high_score))
-                sys.exit()
+                    print(self.stats.high_score)
+                    sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
                 self._check_play_button(mouse_pos)
@@ -76,6 +77,7 @@ class AlienInvasion:
             self.stats.game_active = True
             self.sb.prep_score()
             self.sb.prep_level()
+            self.sb.prep_ships()
             # Get rid of any remaining aliens and bullets
             self.aliens.empty()
             self.bullets.empty()
@@ -140,8 +142,9 @@ class AlienInvasion:
     def _ship_hit(self):
         """Respond to the ship being hit by an alien"""
         if self.stats.ships_left > 0:
-            # Decrement ships_left
+            # Decrement ships_left and update scoreboard
             self.stats.ships_left -= 1
+            self.sb.prep_ships()
             # Get rid of any remaining aliens and bullets
             self.aliens.empty()
             self.bullets.empty()
