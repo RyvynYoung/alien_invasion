@@ -95,7 +95,10 @@ class AlienInvasion:
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
         elif event.key == pygame.K_q:
-            sys.exit()
+            all_time_high_score = 'side_projects/alien_invasion/all_time_high_score.txt'
+            with open(all_time_high_score, 'w') as file_object:
+                file_object.write(str(self.stats.high_score))        
+                sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
 
