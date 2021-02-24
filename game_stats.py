@@ -1,3 +1,10 @@
+import os
+ 
+def load_txt():
+    module_path = os.path.dirname(__file__)    
+    filename = module_path + '/all_time_high_score.txt'
+    return open(filename, 'r').read()
+
 class GameStats:
     """Track statistics for Alien Invasion"""
 
@@ -8,8 +15,9 @@ class GameStats:
         # Start Alien Invasion in inactive state
         self.game_active = False
         # High Score should not be reset
-        with open('side_projects/alien_invasion/all_time_high_score.txt') as file_obj:
-            alltime_score = file_obj.read()
+        alltime_score = load_txt()
+        # with open('side_projects/alien_invasion/all_time_high_score.txt') as file_obj:
+        #     alltime_score = file_obj.read()
         self.high_score = int(alltime_score)
 
     def reset_stats(self):
