@@ -8,6 +8,9 @@ from time import sleep
 from game_stats import GameStats
 from button import Button
 from scoreboard import Scoreboard
+import os
+ 
+
 
 class AlienInvasion:
     """Overall class to manage game assets and behavior."""
@@ -47,17 +50,18 @@ class AlienInvasion:
             
             self._update_screen()
             
-
+    def write_txt(self):
+        module_path = os.path.dirname(__file__)    
+        filename = module_path + '/all_time_high_score.txt'
+        with open(filename, 'w') as file_obj:
+            file_obj.write(str(self.stats.high_score))
 
     def _check_events(self):
         """Respond to keypresses and mouse events"""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                all_time_high_score = 'side_projects/alien_invasion/all_time_high_score.txt'
-                with open(all_time_high_score, 'w') as file_object:
-                    file_object.write(str(self.stats.high_score))
-                    print(self.stats.high_score)
-                    sys.exit()
+                all_time_high_score = self.write_txt()
+                sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos = pygame.mouse.get_pos()
                 self._check_play_button(mouse_pos)
@@ -95,10 +99,8 @@ class AlienInvasion:
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
         elif event.key == pygame.K_q:
-            all_time_high_score = 'side_projects/alien_invasion/all_time_high_score.txt'
-            with open(all_time_high_score, 'w') as file_object:
-                file_object.write(str(self.stats.high_score))        
-                sys.exit()
+            all_time_high_score = self.write_txt()    
+            sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
 
