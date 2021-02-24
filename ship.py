@@ -1,5 +1,11 @@
 import pygame
 from pygame.sprite import Sprite
+import os
+
+def load_ship():
+    module_path = os.path.dirname(__file__)    
+    filename = module_path + '/ship.bmp'
+    return filename
 
 class Ship(Sprite):
     """A class to manage the ship"""
@@ -11,7 +17,8 @@ class Ship(Sprite):
         self.screen_rect = ai_game.screen.get_rect()
 
         # Load the ship image and set its rect.
-        self.image = pygame.image.load("/Users/ryvyny/side_projects/alien_invasion/images/ship.bmp")
+        ship_image = load_ship()
+        self.image = pygame.image.load(ship_image)
         self.rect = self.image.get_rect()
 
         # Start each new ship at the bottom center of the screen
