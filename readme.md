@@ -7,7 +7,7 @@
 
 ## Requirements and Running Notes
 - installation of Python
-- install pygame library if not already installed (from command line: pip install pygame)
+- install Pygame library if not already installed (from command line: pip install pygame)
 - clone this repository
 - open and run the alien_invasion.py file (the other files in the repo are needed for this file to run)
 - this will open a new window with the game
