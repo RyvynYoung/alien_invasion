@@ -1,37 +1,27 @@
-## Welcome to GitHub Pages
+   <img src="https://i.pinimg.com/originals/f7/b7/5e/f7b75eb944d396a563820ecdc002eb74.gif"
+    style="center"
+     /> 
 
-You can use the [editor on GitHub](https://github.com/RyvynYoung/alien_invasion/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# Alien Invasion
+- Alien Invasion project from book Python Crash Course by Eric Matthes
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Requirements and Running Notes
+- installation of Python
+- install pygame library if not already installed (from command line: pip install pygame)
+- clone this repository
+- open and run the alien_invasion.py file (the other files in the repo are needed for this file to run)
+- this will open a new window with the game
+    - FYI - this is slow to load for me, you may need to give it 30 seconds to fully load before clicking Play button
 
-### Markdown
+## Game Synopsis
+In Alien Invasion, the player controls a rocket ship that appears at the bottom center of the screen. The player can move the ship right and left using the arrow keys and shoot bullets using the spacebar. When the game begins, a fleet of aliens fills the sky and moves across and down the screen. The player shoots and destroys the aliens. If the player shoots all of the aliens, a new fleet appears that moves faster than the previous fleet. If any alien hits the player's ship or reaches the bottom of the screen. the player loses a ship. If the player loses three ships, the game ends.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+**My Customizations:** tracking all time highest score, finding way to use relative path in VScode so that others can clone repo
 
-```markdown
-Syntax highlighted code block
+**Learning Takeaways:** making and using Classes, refactoring and helper methods, Pygame library, larger project using multiple files, Visual Studio, write to and read from files
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/RyvynYoung/alien_invasion/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+**Debug solutions:**
+- File not found error, use full path for file
+- remember to READ the error messages! They tell you where the problem is!
+- Full path will not work for production (others won't have same file path)
+    - code added to get current working directory and add to file path to enable reading from and writing to text file
