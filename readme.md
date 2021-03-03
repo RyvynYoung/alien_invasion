@@ -8,7 +8,7 @@
 ## Requirements and Running Notes
 - installation of Python
 - install Pygame library if not already installed (from command line: pip install pygame)
-- clone this repository
+- clone this repository: [https://github.com/RyvynYoung/alien_invasion](https://github.com/RyvynYoung/alien_invasion)
 - open and run the alien_invasion.py file (the other files in the repo are needed for this file to run)
 - this will open a new window with the game
     - FYI - this is slow to load for me, you may need to give it 30 seconds to fully load before clicking Play button
